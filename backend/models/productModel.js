@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import User from "./userModel.js";
 
 const reviewSchema = mongoose.Schema(
   {
@@ -23,7 +24,7 @@ const reviewSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-const productSchema = new mongoose.Schema(
+const productSchema = mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
@@ -78,6 +79,6 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Product = mongoose.model("Product", "productSchema");
+const Product = mongoose.model("Product", productSchema);
 
 export default Product;
